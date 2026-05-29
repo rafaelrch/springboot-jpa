@@ -1,5 +1,8 @@
-package com.rafaelrocha.course.entities;
+package com.rafaelrocha.course.entities.pk;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.rafaelrocha.course.entities.Order;
+import com.rafaelrocha.course.entities.Product;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
