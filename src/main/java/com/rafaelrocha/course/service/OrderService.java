@@ -3,7 +3,6 @@ package com.rafaelrocha.course.service;
 import com.rafaelrocha.course.entities.Order;
 
 import com.rafaelrocha.course.repositories.OrderRepository;
-import com.rafaelrocha.course.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
