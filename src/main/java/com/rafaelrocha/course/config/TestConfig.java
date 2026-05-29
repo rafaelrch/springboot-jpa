@@ -1,8 +1,10 @@
 package com.rafaelrocha.course.config;
 
+import com.rafaelrocha.course.entities.Category;
 import com.rafaelrocha.course.entities.Order;
 import com.rafaelrocha.course.entities.OrderStatus;
 import com.rafaelrocha.course.entities.User;
+import com.rafaelrocha.course.repositories.CategoryRepository;
 import com.rafaelrocha.course.repositories.OrderRepository;
 import com.rafaelrocha.course.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ import java.util.Arrays;
 public class TestConfig implements CommandLineRunner{
 
     @Autowired
+    private CategoryRepository categoryRepository;
+
+    @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -25,6 +30,13 @@ public class TestConfig implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
+
+        Category cat1 = new Category(null, "Eletronics");
+        Category cat2 = new Category(null, "Books");
+        Category cat3 = new Category(null, "Computers");
+
+        categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
+
         User user1 = new User(null, "Rafael", "rafael@gmail.com", "71999682345", "123456");
         User user2 = new User(null, "Maria", "maria@gmail.com", "718293847", "123456");
 
